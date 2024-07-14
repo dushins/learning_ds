@@ -1,16 +1,22 @@
+"""Игра угадай число"""
+
 import numpy as np
-number = np.random.randint(1, 101)
+
+number = np.random.randint(1, 101) # загадываем число
+
+# количество попыток
 count = 0
+
 while True:
-    prediction = int(input('Угадайте число '))
-    count += 1
+    count+=1
+    predict_number = int(input("Угадай число от 1 до 100: "))
     
-    if number < prediction:
-        print('число должно быть меньше')
-        
-    elif number > prediction:
-        print('число должно быть больше')
-        
+    if predict_number > number:
+        print("Число должно быть меньше!")
+
+    elif predict_number < number:
+        print("Число должно быть больше!")
+    
     else:
-        print(f'вы угадали! это число {number}, вы потратили {count} попыток')
-        break
+        print(f"Вы угадали число! Это число = {number}, за {count} попыток")
+        break #конец игры выход из цикла
